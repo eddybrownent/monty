@@ -10,45 +10,38 @@
  *
  */
 
-int execute_func(char *contents, stack_t **stack, unsigned int counter, FILE *file)
+void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *file)
 {
-	instruction_t options[] = {{"push", push_func}, {"pall", pall_func}};
+	instruction_t options[] = {
+		{"push", push_func},
+		{"pall", pall_func},
+		{NULL, NULL}
+	};
 	unsigned int i = 0;
 	char *opt;
 
-	opt = strtok(contents, " $\n\t");
+	opt = strtok(contents, " \t\n");
 	if (opt && opt[0] == '#')
-		return (0);
+		return;
+
+	buf.arg = NULL;
 
 	while (options[i].opcode && opt)
 	{
 		if (strcmp(opt, options[i].opcode) == 0)
 		{
 			if (strcmp(opt, "push") == 0)
-				buf.arg = strtok(NULL, " $\n\t");
+				buf.arg = strtok(NULL, " $\t\n");
 
-			if (buf.arg == NULL)
-			{
-				fprintf(stderr, "L%d: usage: push integer\n", counter);
-				fclose(file);
-				free(contents);
-				stack_free(*stack);
-				exit(EXIT_FAILURE);
-			}
-			
 			options[i].f(stack, counter);
-			return (0);
+			return;
 		}
 		i++;
 	}
-	
-	if (opt && options[i].opcode == NULL)
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", counter, opt);
-		fclose(file);
-		free(contents);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
-	}
-	return (1);
+
+	fprintf(stderr, "L%d: unknown instruction %s\n", counter, opt);
+	fclose(file);
+	free(buf.contents);
+	stack_free(*stack);
+	exit(EXIT_FAILURE);
 }

@@ -55,13 +55,13 @@ typedef struct buf_s
 extern buf_t buf;
 
 void queue_func(stack_t **head, unsigned int counter);
-void push_func(stack_t **stack, unsigned int line_num);
-void pall_func(stack_t **stack, unsigned int line_num);
-int execute_func(char *contents, stack_t **stack, unsigned int line_num, FILE *file);
+void push_func(stack_t **stack, unsigned int line_number);
+void pall_func(stack_t **stack, unsigned int line_number);
+void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *file);
 void add_queue(stack_t **head, int num);
-void add_node(stack_t **head, int num);
+void add_node(stack_t **stack, int num);
 void stack_free(stack_t *head);
-
+int is_valid_integer(const char *str);
 
 
 
