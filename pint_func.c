@@ -13,7 +13,6 @@ void pint_func(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		fclose(buf.file);
-		free(buf.contents);
 		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
