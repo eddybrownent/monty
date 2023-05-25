@@ -54,6 +54,7 @@ typedef struct buf_s
 }  buf_t;
 extern buf_t buf;
 
+
 void queue_func(stack_t **head, unsigned int counter);
 void push_func(stack_t **stack, unsigned int line_number);
 void pall_func(stack_t **stack, unsigned int line_number);
@@ -69,6 +70,7 @@ void pop_func(stack_t **stack, unsigned int line_number);
 void swap_func(stack_t **stack, unsigned int line_number);
 void add_func(stack_t **stack, unsigned int line_number);
 void nop_func(stack_t **stack, unsigned int line_number);
+void mul_func(stack_t **stack, unsigned int line_number);
 
 
 
