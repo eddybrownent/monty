@@ -61,6 +61,7 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 void add_queue(stack_t **head, int num);
 void sub_func(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, int num);
+void div_func(stack_t **stack, unsigned int line_number);
 void stack_free(stack_t *head);
 int is_valid_integer(const char *str);
 void pint_func(stack_t **stack, unsigned int line_number);

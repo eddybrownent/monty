@@ -21,6 +21,7 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 		{"add", add_func},
 		{"nop", nop_func},
 		{"sub", sub_func},
+		{"div", div_func},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
