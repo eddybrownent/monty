@@ -18,6 +18,7 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 		{"pint", pint_func},
 		{"pop", pop_func},
 		{"swap", swap_func},
+		{"add", add_func},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
