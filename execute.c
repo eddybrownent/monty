@@ -41,7 +41,6 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 
 	fprintf(stderr, "L%d: unknown instruction %s\n", counter, opt);
 	fclose(file);
-	free(buf.contents);
 	stack_free(*stack);
 	exit(EXIT_FAILURE);
 }
