@@ -73,6 +73,7 @@ void nop_func(stack_t **stack, unsigned int line_number);
 void mul_func(stack_t **stack, unsigned int line_number);
 void mod_func(stack_t **stack, unsigned int line_number);
 void pchar_func(stack_t **stack, unsigned int line_number);
+void pstr_func(stack_t **stack, unsigned int line_number);
 
 
 

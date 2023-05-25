@@ -25,6 +25,7 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 		{"mul", mul_func},
 		{"mod", mod_func},
 		{"pchar", pchar_func},
+		{"pstr", pstr_func},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
