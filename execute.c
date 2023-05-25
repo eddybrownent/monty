@@ -23,6 +23,7 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 		{"sub", sub_func},
 		{"div", div_func},
 		{"mul", mul_func},
+		{"mod", mod_func},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
