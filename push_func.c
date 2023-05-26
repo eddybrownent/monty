@@ -40,8 +40,4 @@ void push_func(stack_t **stack, unsigned int line_number)
 	else
 		add_queue(stack, num);
 
-
 }
-
-
-
