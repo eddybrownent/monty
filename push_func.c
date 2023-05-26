@@ -14,7 +14,7 @@ void push_func(stack_t **stack, unsigned int line_number)
 			x++;
 		for (; buf.arg[x] != '\0'; x++)
 		{
-			if (buf.arg[x] > '9' || buf.arg[x] < '0')
+			if (buf.arg[x] > 57 || buf.arg[x] < 48)
 				flag = 1;
 		}
 
