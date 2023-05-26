@@ -35,7 +35,12 @@ void push_func(stack_t **stack, unsigned int line_number)
 	}
 
 	num = atoi(buf.arg);
-	add_node(stack, num);
+	if (buf.lineflag == 0)
+		add_node(stack, num);
+	else
+		add_queue(stack, num);
+
+
 }
 
 

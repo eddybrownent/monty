@@ -1,5 +1,5 @@
 #include "monty.h"
-
+int data_format = 0;
 /**
  * execute_func - to execute the opcodes
  * @stack: head of the linked list ie stack
@@ -28,6 +28,8 @@ void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *f
 		{"pstr", pstr_func},
 		{"rotl", rotl_func},
 		{"rotr", rotr_func},
+		{"queue", queue_func},
+		{"stack", stack_func},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;

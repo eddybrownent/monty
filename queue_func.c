@@ -1,31 +1,35 @@
 #include "monty.h"
+
 /**
- * queue_func - prints the top of stack
- * @head: stack head
- * @counter: line_number
- * Return: nothing
-*/
-void queue_func(stack_t **head, unsigned int counter)
+ * queue_func - Sets the format of the data to a queue (FIFO)
+ * @stack: Double pointer to the head of the stack
+ * @line_number: Line number
+ */
+void queue_func(stack_t **stack, unsigned int line_number)
 {
-	(void)head;
-	(void)counter;
+	(void)stack; /* Unused parameter */
+	(void)line_number; /* Unused parameter */
 	buf.lineflag = 1;
+
 }
 
 /**
- * add_queue - add node to the tail of stack
- * @num: new_value
+ * addqueue - add a node to the tail of the stack
+ * @n: new value
  * @head: head of the stack
- * Return: nothing
-*/
-void add_queue(stack_t **head, int num)
+ * Return: no return
+ */
+void add_queue(stack_t **stack, int num)
 {
 	stack_t *new_node, *temp;
 
-	temp = *head;
+	temp = *stack;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
+		fprintf(stderr, "Error: malloc failed\n");
+		fclose(buf.file);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = num;
@@ -34,15 +38,15 @@ void add_queue(stack_t **head, int num)
 	{
 		while (temp->next)
 			temp = temp->next;
-	}
-	if (!temp)
-	{
-		*head = new_node;
-		new_node->prev = NULL;
-	}
-	else
-	{
 		temp->next = new_node;
 		new_node->prev = temp;
 	}
+	else
+	{
+		*stack = new_node;
+		new_node->prev = NULL;
+	}
 }
+
+
+
