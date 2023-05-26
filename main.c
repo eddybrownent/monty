@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		buf.contents = contents;
-		execute_func(&stack, line_number, contents, file);
+		execute(&stack, line_number, contents, file);
 	}
 
 	fclose(file);

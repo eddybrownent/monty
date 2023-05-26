@@ -57,7 +57,7 @@ extern buf_t buf;
 void queue_func(stack_t **head, unsigned int counter);
 void push_func(stack_t **stack, unsigned int line_number);
 void pall_func(stack_t **stack, unsigned int line_number);
-void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *file);
+void execute(stack_t **stack, unsigned int counter, char *contents, FILE *file);
 void sub_func(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, int num);
 void div_func(stack_t **stack, unsigned int line_number);

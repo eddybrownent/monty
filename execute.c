@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * execute_func - to execute the opcodes
+ * execute - to execute the opcodes
  * @stack: head of the linked list ie stack
  * @counter: to count
  * @contents: carries the line contents
@@ -9,7 +9,7 @@
  *
  */
 
-void execute_func(stack_t **stack, unsigned int counter, char *contents, FILE *file)
+void execute(stack_t **stack, unsigned int counter, char *contents, FILE *file)
 {
 	instruction_t options[] = {
 		{"push", push_func}, {"pall", pall_func}, {"pint", pint_func},
