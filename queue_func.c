@@ -14,10 +14,9 @@ void queue_func(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * addqueue - add a node to the tail of the stack
- * @n: new value
- * @head: head of the stack
- * Return: no return
+ * add_queue - add a node to the tail of the stack
+ * @num: new value
+ * @stack: head of the stack
  */
 void add_queue(stack_t **stack, int num)
 {
